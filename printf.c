@@ -10,58 +10,49 @@
  */
 int _printf(const char *format, ...)
 {
-	const char *p = format;
+	const char *p = format, *format_loop = format;
 	char *str;
-	const char *format_loop = format;
+	int count = 0, i = 0, len, j;
 	va_list ap;
-	int count = 0;
-	int i = 0;
-	int len, j;
 
 	va_start(ap, format);
-
 	if (format == NULL)
 		return (0);
-
-	while (format_loop[i] != '\0')
+	for ( ; format_loop[i] != '\0'; )
 	{
 		if (format_loop[i] == '%')
 		{
 			if (p[i + 1] == '\0')
 				return (0);
-
 			if (p[i + 1] == 'c')
 			{
 				_putchar(va_arg(ap, int));
 				count += 1;
+				i++;
 			}
 			if (p[i + 1] == 's')
 			{
-				str = va_arg(ap, char *);	
+				str = va_arg(ap, char *);
 				len = _strlen(str);
-				for (j = 0; *str && (j < len); str++)
-				{
-					_putchar(*str);
-				}
+				for (j = 0; j < len; j++)
+					_putchar(str[j]);
 				count += len;
+				i++;
 			}
 			else
 			{
 				_putchar(p[i + 1]);
 				count += 1;
+				i++;
 			}
-			format_loop++;
 		}
-
 		else
 		{
-			_putchar(format[i]);
+			_putchar(format_loop[i]);
 			count += 1;
 		}
-
 		i++;
 	}
-
 	va_end(ap);
 	return (count);
 }
