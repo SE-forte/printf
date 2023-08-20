@@ -36,11 +36,11 @@ int _printf(const char *format, ...)
 					break;
 				case 'd':
 					num = va_arg(ap, int);
-					print_number(num);
+					count += print_number(num);
 					break;
 				case 'i':
 					num = va_arg(ap, int);
-					print_number(num);
+					count += print_number(num);
 					break;
 				default:
 					count += _putchar(p[i + 1]);

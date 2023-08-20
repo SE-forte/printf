@@ -6,6 +6,7 @@ int _putchar(char c);
 int _strlen(char *s);
 int print_string(char *str);
 int print_null();
-void print_number(int n);
+int print_number(int n);
+int count_digit(int i);
 
 #endif /* MAIN_H */

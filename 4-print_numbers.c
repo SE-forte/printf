@@ -7,7 +7,7 @@
  *
  * Return: Void
  */
-void print_number(int n)
+int print_number(int n)
 {
 	if (n < 0)
 	{
@@ -19,4 +19,30 @@ void print_number(int n)
 		print_number(n / 10);
 
 	_putchar((n % 10) + '0');
+
+	return (count_digit(n));
+}
+
+/**
+ * count_digit - counts the number of digits in an integer
+ * @i: integer to evaluate
+ *
+ * Return: number of digits
+ */
+int count_digit(int i)
+{
+	unsigned int d = 0;
+	unsigned int u;
+
+	if (i < 0)
+		u = i * -1;
+	else
+		u = i;
+
+	while (u != 0)
+	{
+		u /= 10;
+		d++;
+	}
+	return (d);
 }
