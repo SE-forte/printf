@@ -7,20 +7,16 @@
  *
  * Return: nullCount (int)
  */
-int print_null(char *str)
+int print_null()
 {
 	int nullCount = 6;
 
-	if (str == NULL)
-	{
-		_putchar('(');
-		_putchar('n');
-		_putchar('u');
-		_putchar('l');
-		_putchar('l');
-		_putchar(')');
-		return (nullCount);
-	}
+	_putchar('(');
+	_putchar('n');
+	_putchar('u');
+	_putchar('l');
+	_putchar('l');
+	_putchar(')');
 
-	return (0);
+	return (nullCount);
 }

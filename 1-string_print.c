@@ -7,13 +7,15 @@
  *
  * Return: Void
  */
-void print_string(char *str)
+int print_string(char *str)
 {
 	int j;
+	int len;
 
-	if (str != NULL)
-	{
-		for (j = 0; j < _strlen(str); j++)
-			_putchar(str[j]);
-	}
+	len = _strlen(str);
+
+	for (j = 0; j < len; j++)
+		_putchar(str[j]);
+
+	return (len);
 }

@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	const char *p = format, *format_loop = format;
 	char *str;
-	int count = 0, i = 0;
+	int count = 0, i = 0, num;
 	va_list ap;
 
 	va_start(ap, format);
@@ -28,11 +28,15 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					str = va_arg(ap, char *);
-					print_string(str); /* call string */
 					if (str != NULL)
-						count += _strlen(str);
-					count += print_null(str);
+						count += print_string(str);
+					else
+						count += print_null();
 					i++;
+					break;
+				case 'd':
+					num = va_arg(ap, int);
+					print_number(num);
 					break;
 				default:
 					count += _putchar(p[i + 1]);
