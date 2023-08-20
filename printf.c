@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					str = va_arg(ap, char *);
-					print_string(str);
+					print_string(str); /* call string */
 					if (str != NULL)
 						count += _strlen(str);
 					count += print_null(str);
@@ -39,6 +39,7 @@ int _printf(const char *format, ...)
 					_putchar(p[i + 1]);
 					count += 1;
 					i++;
+					break;
 			}
 		}
 		else
