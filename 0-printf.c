@@ -37,15 +37,16 @@ int _printf(const char *format, ...)
 				case 'd':
 					num = va_arg(ap, int);
 					count += print_number(num);
+					i++;
 					break;
 				case 'i':
 					num = va_arg(ap, int);
 					count += print_number(num);
+					i++;
 					break;
 				default:
 					count += _putchar(p[i + 1]);
 					i++;
-					break;
 			}
 		}
 		else
