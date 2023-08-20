@@ -19,7 +19,8 @@ int print_null(char *str)
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
+		return (nullCount);
 	}
 
-	return (nullCount);
+	return (0);
 }
