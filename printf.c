@@ -23,8 +23,7 @@ int _printf(const char *format, ...)
 			switch (p[i + 1])
 			{
 				case 'c':
-					_putchar(va_arg(ap, int));
-					count += 1;
+					count += _putchar(va_arg(ap, int));
 					i++;
 					break;
 				case 's':
@@ -36,8 +35,7 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 				default:
-					_putchar(p[i + 1]);
-					count += 1;
+					count += _putchar(p[i + 1]);
 					i++;
 					break;
 			}
