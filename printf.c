@@ -34,10 +34,6 @@ int _printf(const char *format, ...)
 					count += _strlen(str);
 					i++;
 					break;
-				case '%':
-					_putchar('%');
-					count += 1;
-					break;
 				default:
 					_putchar(p[i + 1]);
 					count += 1;
