@@ -16,16 +16,12 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	if (format == NULL)
-		return (EXIT_SUCCESS);
-	while (format_loop[i] != '\0')
+	while (format && format_loop[i] != '\0')
 	{
-		if (format_loop[i] == '%')
+		if (format_loop[i] == '%' && p[i + 1] != '\0')
 		{
 			switch (p[i + 1])
 			{
-				case '\0':
-					return (EXIT_SUCCESS);
 				case 'c':
 					_putchar(va_arg(ap, int));
 					count += 1;
