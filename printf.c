@@ -29,16 +29,14 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					str = va_arg(ap, char *);
+					print_string(str);
 					if (str != NULL)
-					{
-						print_string(str);
 						count += _strlen(str);
-					}
 					else
 					{
 						print_null();
 						count += 6;
-					}	
+					}
 					i++;
 					break;
 				default:

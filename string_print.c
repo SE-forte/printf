@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -10,6 +11,9 @@ void print_string(char *str)
 {
 	int j;
 
-	for (j = 0; j < _strlen(str); j++)
-		_putchar(str[j]);
+	if (str != NULL)
+	{
+		for (j = 0; j < _strlen(str); j++)
+			_putchar(str[j]);
+	}
 }
