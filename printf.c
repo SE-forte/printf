@@ -12,38 +12,36 @@ int _printf(const char *format, ...)
 {
 	const char *p = format, *format_loop = format;
 	char *str;
-	int count = 0, i = 0, len, j;
+	int count = 0, i = 0, j;
 	va_list ap;
 
 	va_start(ap, format);
 	if (format == NULL)
 		return (EXIT_SUCCESS);
-	for ( ; format_loop[i] != '\0'; )
+	while (format_loop[i] != '\0')
 	{
 		if (format_loop[i] == '%')
 		{
-			if (p[i + 1] == '\0')
-				return (0);
-			if (p[i + 1] == 'c')
+			switch (p[i + 1])
 			{
-				_putchar(va_arg(ap, int));
-				count += 1;
-				i++;
-			}
-			if (p[i + 1] == 's')
-			{
-				str = va_arg(ap, char *);
-				len = _strlen(str);
-				for (j = 0; j < len; j++)
-					_putchar(str[j]);
-				count += len;
-				i++;
-			}
-			else
-			{
-				_putchar(p[i + 1]);
-				count += 1;
-				i++;
+				case '\0':
+					return (EXIT_SUCCESS);
+				case 'c':
+					_putchar(va_arg(ap, int));
+					count += 1;
+					i++;
+					break;
+				case 's':
+					str = va_arg(ap, char *);
+					for (j = 0; j < _strlen(str); j++)
+						_putchar(str[j]);
+					count += _strlen(str);
+					i++;
+					break;
+				default:
+					_putchar(p[i + 1]);
+					count += 1;
+					i++;
 			}
 		}
 		else
