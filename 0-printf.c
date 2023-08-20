@@ -38,6 +38,10 @@ int _printf(const char *format, ...)
 					num = va_arg(ap, int);
 					print_number(num);
 					break;
+				case 'i':
+					num = va_arg(ap, int);
+					print_number(num);
+					break;
 				default:
 					count += _putchar(p[i + 1]);
 					i++;
