@@ -29,9 +29,22 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					str = va_arg(ap, char *);
-					for (j = 0; j < _strlen(str); j++)
-						_putchar(str[j]);
-					count += _strlen(str);
+					if (str != NULL)
+					{
+						for (j = 0; j < _strlen(str); j++)
+							_putchar(str[j]);
+						count += _strlen(str);
+					}
+					else
+					{
+						_putchar('(');
+						_putchar('n');
+						_putchar('u');
+						_putchar('l');
+						_putchar('l');
+						_putchar(')');
+						count += 6;
+					}	
 					i++;
 					break;
 				default:
