@@ -1,5 +1,7 @@
 .\" Man page for printf project
 .TH man 7 "20 August 2023" "1.0" "_printf man page"
+.SH NAME
+_printf \- produces output according to a format
 .SH SYNOPSIS
 .SH DESCRIPTION
 .SH OPTIONS
