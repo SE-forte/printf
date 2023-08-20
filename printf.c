@@ -32,11 +32,7 @@ int _printf(const char *format, ...)
 					print_string(str);
 					if (str != NULL)
 						count += _strlen(str);
-					else
-					{
-						print_null();
-						count += 6;
-					}
+					count += print_null(str);
 					i++;
 					break;
 				default:
