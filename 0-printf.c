@@ -20,12 +20,6 @@ int _printf(const char *format, ...)
 	{
 		if (format_loop[i] == '%' && p[i + 1] != '\0')
 		{
-			if ((p[i + 1] == 'd') || (p[i + 1] == 'i'))
-			{
-				num = va_arg(ap, int);
-				count += print_number(num);
-				i++;
-			}
 			switch (p[i + 1])
 			{
 				case 'c':
@@ -34,6 +28,14 @@ int _printf(const char *format, ...)
 				case 's':
 					str = va_arg(ap, char *);
 					count += print_string(str);
+					break;
+				case 'd':
+					num = va_arg(ap, int);
+					count += print_number(num);
+					break;
+				case 'i':
+					num = va_arg(ap, int);
+					count += print_number(num);
 					break;
 				default:
 					count += _putchar(p[i + 1]);
