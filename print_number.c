@@ -1,9 +1,8 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * print_numbers - pulls numbers using va_arg and output to stdout
- * @str: string
+ * print_number - pulls numbers using va_arg and output to stdout
+ * @n: number to print
  *
  * Return: Void
  */
