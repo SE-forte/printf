@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (format_loop[i] == '%' && p[i + 1] != '\0')
 		{
-			if (p[i + 1] == 'd' || p[i + 1] == 'i')
+			if ((p[i + 1] == 'd') || (p[i + 1] == 'i'))
 			{
 				num = va_arg(ap, int);
 				count += print_number(num);
