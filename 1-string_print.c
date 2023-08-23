@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -11,6 +10,9 @@ int print_string(char *str)
 {
 	int j;
 	int len;
+
+	if (!str)
+		str = "(null)";
 
 	len = _strlen(str);
 
